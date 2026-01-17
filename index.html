@@ -6,16 +6,38 @@
 </head>
 <body>
 
-<div class="chat-container">
-  <h2>💬 Real Time Chat</h2>
+<div class="chat-app" id="app">
 
-  <div id="messages"></div>
+  <!-- Header -->
+  <div class="chat-header">
+    <div>
+      <h3>Realtime Chat</h3>
+      <p class="status">🟢 <span id="onlineCount">1</span> Online</p>
+    </div>
 
-  <input id="username" placeholder="Your Name" />
-  <input id="message" placeholder="Type message..." />
-  <button id="sendBtn">Send</button>
+    <div class="actions">
+      <button onclick="toggleDark()">🌙</button>
+      <button onclick="clearChat()">🧹</button>
+    </div>
+  </div>
+
+  <!-- Messages -->
+  <div id="messages" class="chat-messages"></div>
+
+  <!-- Input -->
+  <div class="chat-input">
+    <input id="username" placeholder="Your name" />
+    <input id="message" placeholder="Type a message..." />
+    <button onclick="addEmoji()">😀</button>
+    <button id="sendBtn">➤</button>
+  </div>
+
 </div>
+
+<audio id="msgSound" src="https://assets.mixkit.co/sfx/preview/mixkit-message-pop-alert-2354.mp3"></audio>
 
 <script type="module" src="script.js"></script>
 </body>
 </html>
+
+
