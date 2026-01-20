@@ -80,15 +80,33 @@ body {
 /* Input */
 .chat-input {
   display: flex;
-  gap: 5px;
+  align-items: center;
+  gap: 8px;
   padding: 10px;
   border-top: 1px solid #ddd;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .chat-input input {
   flex: 1;
-  padding: 8px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  min-width: 0;
 }
+
+.chat-input button {
+  padding: 10px 14px;
+  border: none;
+  background: #4f46e5;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
 
 /* Dark Mode */
 .dark body {
@@ -108,4 +126,61 @@ body {
   background: #1e293b;
   color: white;
 }
+@media (max-width: 600px) {
+  .chat-input {
+    gap: 6px;
+  }
 
+  .chat-input button {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+}
+.online-users {
+  padding: 6px 12px;
+  font-size: 13px;
+  background: #eef2ff;
+  border-bottom: 1px solid #ddd;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.dark .online-users {
+  background: #020617;
+}
+.message {
+  position: relative;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: rgba(0,0,0,0.05);
+  border: none;
+  border-radius: 50%;
+  padding: 4px 6px;
+  cursor: pointer;
+  font-size: 12px;
+  opacity: 0;
+  transition: 0.2s ease;
+}
+
+.message:hover .delete-btn {
+  opacity: 1;
+}
+
+.delete-btn:hover {
+  background: rgba(239,68,68,0.2);
+  transform: scale(1.1);
+}
+#imageInput {
+  width: 90px;
+  font-size: 12px;
+}
+.chat-img {
+  max-width: 200px;
+  border-radius: 10px;
+  margin-top: 6px;
+  cursor: pointer;
+}
